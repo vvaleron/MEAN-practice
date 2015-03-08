@@ -3,8 +3,9 @@ var express        = require('express'),
     mongoose       = require('mongoose'),
     bodyParser     = require('body-parser'),
     methodOverride = require('method-override'),
-    redis          = require('redis'),
+    //redis          = require('redis'),
     logger         = require('./config/logger')(app),
+    mysql          = require('./config/mysql')(app),
     port           = process.env.PORT || 8080;
 
 app.use(bodyParser.json());
@@ -15,7 +16,6 @@ app.use(express.static(__dirname + '/public'));
 
 // configuration ===========================================
 require('./app/routes')(app);
-require('./config/db');
 
 app.listen(port);
 console.log('===================================================');

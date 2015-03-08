@@ -1,5 +1,6 @@
 var models = require('./models'),
-    userService = require('./services/user');
+    userService = require('./services/user'),
+    cardsService = require('./services/cards');
 
 exports.userId = function (req, res) {
     function call (doc) {
@@ -36,3 +37,7 @@ exports.singup = function (req, res) {
 exports.morgaTest = function (req, res) {
     res.send(req.body);
 };
+
+exports.createNewCard = cardsService.createNew;
+exports.getCards = cardsService.getAll;
+exports.removeCard = cardsService.remove;

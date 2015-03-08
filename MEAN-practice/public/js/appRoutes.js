@@ -18,6 +18,11 @@ angular.module('appRoutes', [
 		.when('/user', {
 			templateUrl: 'views/user.html',
 			controller: 'MainController'
+		})
+
+		.when('/words-cards', {
+			templateUrl: 'views/wordsCards.html',
+			controller: 'WordsCardsController'
 		});
 
 	$locationProvider.html5Mode(true);
